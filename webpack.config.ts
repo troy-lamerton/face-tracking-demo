@@ -1,5 +1,6 @@
 import { Configuration } from 'webpack';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const config: Configuration = {
@@ -31,6 +32,11 @@ const config: Configuration = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/public/index.html'),
     }),
+    new CopyWebpackPlugin([
+      {
+        from: './node_modules/clmtrackr/build/clmtrackr.js',
+      },
+    ]),
   ],
 };
 module.exports = config;

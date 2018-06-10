@@ -3,18 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Face tracking demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <video id="inputVideo" width="400" height="300" autoplay loop>
-      <source src="./media/somevideo.ogv" type="video/ogg"/>
-    </video>
-    <script src="js/clmtrackr.js"></script>
-    <script type="text/javascript">
-    var videoInput = document.getElementById('inputVideo');
 
-var ctracker = new clm.tracker();
-ctracker.init();
-ctracker.start(videoInput);
-</script>
+    <div class="outsideWrapper">
+      <div class="insideWrapper">
+        <video id="inputVideo" class="coveredImage" width="720" height="480" autoplay muted></video>
+        <canvas id="drawCanvas" class="coveringCanvas" width="720" height="480"></canvas>
+      </div>
+    </div>
+
+
+    <script src="clmtrackr.js"></script>
   </body>
 </html>
