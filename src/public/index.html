@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Face tracking demo</title>
+  </head>
+  <body>
+    <video id="inputVideo" width="400" height="300" autoplay loop>
+      <source src="./media/somevideo.ogv" type="video/ogg"/>
+    </video>
+    <script src="js/clmtrackr.js"></script>
+    <script type="text/javascript">
+    var videoInput = document.getElementById('inputVideo');
+
+var ctracker = new clm.tracker();
+ctracker.init();
+ctracker.start(videoInput);
+</script>
+  </body>
+</html>
